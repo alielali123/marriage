@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Do You Love Me?</title>
+    <style>
+        body {
+            background: red;
+            font-family: 'Arial, sans-serif';
+            
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: white;
+            font-size: 3em;
+        }
+        a ,.button1 {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px 25px;
+            font-size: 1.5em;
+            color: white;
+            background-color: rgb(140, 185, 233);
+            text-decoration: none;
+            border-radius: 10px;
+        }
+        a:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <h1>Do You Love Me?</h1>
+    <a href="love.html">Yes</a>
+    <button id="button" class="button1" onclick="toggleText()">No</button>
+        <script>
+        function toggleText() {
+            var button = document.getElementById('button');
+            if (button.innerHTML === "No") {
+                button.innerHTML = "Please press yes";
+                button.style.backgroundColor = "ff69b4"; // Change color to green
+            } else {
+                button.innerHTML = "No";
+                button.style.backgroundColor = "ff69b4"; // Change color back to red
+            }
+        }
+    </script>
+</body>
+</html>

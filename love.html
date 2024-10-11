@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me?</title>
+    <style>
+        body {
+            background: url(faty.jpg) no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            color: #333;
+            padding: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 452px auto 10px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff69b4;
+        }
+        .button , .button1 {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dear FATOUMA,</h1>
+        <p> My lovely girl .You are the most amazing person I have ever met. I want to spend the rest of my life with you. Will you marry me?</p>
+        <button class="button" onclick="sendEmail('Yes')">Yes</button>
+        <button class="button1" id="button1" onclick="toggleText()">No</button>
+    </div>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+    emailjs.init({
+        publicKey: "-r5IsBGdW28ylG2YO",
+    });
+    })();
+</script>
+    <script>
+        (function() {
+            emailjs.init("-r5IsBGdW28ylG2YO");
+        })();
+
+        function sendEmail(response) {
+            emailjs.send("service_9nyj0apk", "template_mpa8pe8", {
+                to_name: "Ali",
+                from_name: "Fatima",
+                message: response
+            })
+            .then(function(response) {
+                alert('Email sent successfully!');
+            }, function(error) {
+                alert('Failed to send email: ' + JSON.stringify(error));
+            });
+        }
+    </script>
+        <script>
+        function toggleText() {
+            var button = document.getElementById('button1');
+            if (button.innerHTML === "No") {
+                button.innerHTML = "Yes";
+                button.style.backgroundColor = "ff69b4"; // Change color to green
+            } else {
+                button.innerHTML = "No";
+                button.style.backgroundColor = "ff69b4"; // Change color back to red
+            }
+        }
+    </script>
+
+</body>
+</html>
